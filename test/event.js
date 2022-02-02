@@ -186,5 +186,6 @@ server.listen(() => {
     setTimeout(() => {
         client.disconnect();
         server.close();
+        process.exit(0);
     }, 10 * 1000);
 });
