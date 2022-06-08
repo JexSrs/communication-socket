@@ -11,5 +11,5 @@ export function isValid(driver: string): boolean {
 }
 
 export function get(parameters: ConnectionClientParameters): SocketClient {
-    return new drivers[parameters.driver](parameters);
+    return new drivers[parameters.driver!](parameters);
 }
