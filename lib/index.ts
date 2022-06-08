@@ -13,11 +13,11 @@ export class SupportedDrivers {
         return Object.keys(compDrivers);
     }
 
-    static socketClient(): string[] {
+    static client(): string[] {
         return Object.keys(sockClientDrivers);
     }
 
-    static socketServer(): string[] {
+    static server(): string[] {
         return Object.keys(sockServerDrivers);
     }
 

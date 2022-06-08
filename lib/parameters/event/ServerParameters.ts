@@ -1,10 +1,10 @@
 import {ServerOptions} from "socket.io";
 
 export interface ServerParameters {
-    driver: string;
+    driver?: string;
     port: number;
     key: string;
-    refuseUnsignedId: boolean;
-    onFailedAuthentication: 'keep' | 'disconnect';
+    refuseUnsignedId?: boolean;
+    onFailedAuthentication?: 'keep' | 'disconnect';
     socketio?: Partial<ServerOptions>;
 }
