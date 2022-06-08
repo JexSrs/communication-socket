@@ -63,9 +63,6 @@
     /* Advanced Options */
     "forceConsistentCasingInFileNames": true,
     /* Disallow inconsistently-cased references to the same file. */
-    "lib": [
-      "es2015.iterable"
-    ]
   },
   "exclude": [
     "node_modules",
