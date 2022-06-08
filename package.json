@@ -1,6 +1,6 @@
 {
-  "name": "@project-christopher/communication-socket",
-  "version": "1.0.1",
+  "name": "communication-socket",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,10 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Project-Christopher/communication-socket.git"
+    "url": "git+https://github.com/JexSrs/communication-socket.git"
   },
   "bugs": {
-    "url": "https://github.com/Project-Christopher/communication-socket/issues"
+    "url": "https://github.com/JexSrs/communication-socket/issues"
   },
   "license": "Apache 2.0"
 }

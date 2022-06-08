@@ -17,12 +17,18 @@ export class Client {
 
 
     constructor(readonly parameters: ClientParameters) {
-        if(!parameters.compression.disable) {
+        if(typeof this.parameters.compression.disable === 'undefined')
+            this.parameters.compression.disable = false;
+
+        if(!this.parameters.compression.disable) {
             if (!isComDrVal(parameters.compression.driver)) throw new Error(`compression.driver '${parameters.compression.driver}' is invalid.`);
         }
 
+        if(typeof this.parameters.connection.driver === 'undefined')
+            this.parameters.connection.driver = 'socket.io';
+
         if(parameters.connection.token.length == 0) throw new Error('connection.token cannot be empty');
-        if(!isConDrVal(parameters.connection.driver)) throw new Error(`connection.driver '${parameters.connection.driver}' is invalid.`);
+        if(!isConDrVal(parameters.connection.driver!)) throw new Error(`connection.driver '${parameters.connection.driver}' is invalid.`);
         if(parameters.connection.address.length == 0) throw new Error('connection.address cannot be empty.');
 
         if(!parameters.encryption.disable) {
@@ -35,6 +41,8 @@ export class Client {
             if(parameters.encryption.asymmetric!!.key?.length == 0) throw new Error('encryption.asymmetric.server_key cannot be empty');
             if(!isSymDrVal(parameters.encryption.symmetric?.driver)) throw new Error(`encryption.symmetric.driver '${parameters.encryption.symmetric?.driver}' is not valid.`);
         }
+
+        this.parameters.compression.disable = true;
 
         this.connDriver = getConDriver(this.parameters.connection);
     }

@@ -12,6 +12,9 @@ export class Server {
     constructor(
         readonly parameters: ServerParameters
     ) {
+        if(typeof this.parameters.driver === 'undefined')
+            this.parameters.driver = 'socket.io';
+
         if(!isConDrVal(parameters.driver)) throw new Error("connection.driver is invalid.");
         if(!isValidPort(parameters.port)) throw new Error('connection.port is not with range (0, 65535].')
 

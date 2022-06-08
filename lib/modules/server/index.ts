@@ -1,5 +1,4 @@
 import {SocketServer} from "./SocketServer";
-import {SocketIo} from "./drivers/socket.io";
 import {ServerParameters} from "../../parameters/event/ServerParameters";
 
 export const drivers: { [key: string]: any } = {
